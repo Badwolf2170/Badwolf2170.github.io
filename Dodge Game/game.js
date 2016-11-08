@@ -38,10 +38,10 @@ function draw() {
         if (keyDown(LEFT_ARROW) && player.position.x > (playerImage.width / 2)) { 
             player.position.x -= 2;
         }
-         if (keyDown(UP_ARROW) && player.position.y < (height - (playerImage.height / 2))) { 
+         if (keyDown(UP_ARROW) && player.position.y > (height - (playerImage.height / 2))) { 
             player.position.y -= 2;  
          }
-         if (keyDown(DOWN_ARROW) && player.position.y > (playerImage.height / 2)) { 
+         if (keyDown(DOWN_ARROW) && player.position.y < (playerImage.height / 2)) { 
             player.position.y += 2; 
          }
         enemy.position.y = enemy.position.y + 5;  
