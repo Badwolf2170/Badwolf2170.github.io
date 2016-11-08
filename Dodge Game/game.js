@@ -11,11 +11,15 @@ function setup() {
 } 
 
 function draw() { 
+    if (isGameOver) { 
+        gameOver();
     if (enemy.overlap(player)) { 
         gameOver(); 
     } else { 
         if (enemy.overlap(player)) { 
             isGameOver = true; 
+        
+        }
         } 
     }
     
@@ -44,5 +48,16 @@ function gameOver() {
     background(0); 
     textAlign(CENTER); 
     fill("white"); 
-    text("Game Over!", width/2, height/2);
+    text("Game Over!", width/2, height/2); 
+    text("Click anywhere to try again", width/2, 3*height/4)
 } 
+
+function mouseClicked() { 
+  if (isGameOver) { 
+    isGameOver = false;
+    player.position.x = width/2; 
+    player.position.y = height-25; 
+    enemy.position.x = width/2 
+    enemy.position.y = 0;
+  }
+}
