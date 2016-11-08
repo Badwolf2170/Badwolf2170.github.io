@@ -37,8 +37,14 @@ function draw() {
         }    
         if (keyDown(LEFT_ARROW) && player.position.x > (playerImage.width / 2)) { 
             player.position.x -= 2;
-        } 
-        enemy.position.y = enemy.position.y + 3;  
+        }
+         if (keyDown(UP_ARROW) && player.position.y < (playerImage.height / 2)) { 
+            player.position.y += 2;  
+         }
+         if (keyDown(DOWN_ARROW) && player.position.y > (playerImage.height / 2)) { 
+            player.position.y -= 2; 
+         }
+        enemy.position.y = enemy.position.y + 5;  
         if (enemy.position.y > height) { 
             enemy.position.y = 0; 
             enemy.position.x = random(5, width-5); 
